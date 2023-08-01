@@ -9,7 +9,7 @@ The content of this repository is licensed under the CC-BY-NC-4.0 license. See t
 `LICENSE` for details.
 
 ## Contents
-* `systems`
+* `systems`:
 XYZ files of the systems studied
 * `dataset-sampling`:
 Scripts and input files to generate the training data
