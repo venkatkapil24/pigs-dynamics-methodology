@@ -1,0 +1,1 @@
+This folder structure uses i-PI to combine the physical potential and the PIGS correction encoding quantum dynamical effects for a molecule of water. It uses LAMMPS/n2p2 to fit the PIGS correction potential. Use `setup.sh` to create a folder structure of several short weakly thermostatted simulations and `getacfs.sh` to calculate the vibrational spectrum. 
