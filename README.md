@@ -9,13 +9,11 @@ The content of this repository is licensed under the CC-BY-NC-4.0 license. See t
 `LICENSE` for details.
 
 ## Contents
-* `systems`:
+* `0_systems`:
 XYZ files of the systems studied
-* `dataset-sampling`:
+* `1_dataset-sampling`:
 Scripts and input files to generate the training data
-* `datasets`:
+* `2_datasets`:
 The datasets used in this work
-* `calculation of spectra`:
+* `3_calculation of spectra`:
 Scripts and input files to generate spectra
-* `figures`:
-Raw data and scripts that generate the figures
