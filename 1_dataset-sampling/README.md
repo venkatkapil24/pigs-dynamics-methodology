@@ -8,4 +8,5 @@ For a given system, enter the directory and run the `setup.sh` command to genera
 
 You can use the script `get_dataset_from_PIMD_simulation_data.py` to convert the i-PI output files into an extended XYZ file in atomic units or the more commonly used eV-Ansgtrom units.
 
+##
 _Note that you can use your favourite MLP code to fit a potential on the centroid positions and the differential force._
