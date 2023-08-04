@@ -1,0 +1,30 @@
+<simulation verbosity='low'>
+  <output prefix='replay'>
+    <properties filename='out' stride='1'>  [ potential ] </properties>
+    <trajectory filename='for' format='xyz' stride='1'> forces </trajectory>
+    <checkpoint filename='restart' stride='20000' overwrite='true'/>
+  </output>
+  <total_steps> 2000000 </total_steps>
+  <prng>
+    <seed>23658</seed>
+  </prng>
+  <ffsocket mode='unix' pbc='false' name='driver'>
+    <!--<address>localhost</address>   -->
+    <address>driver</address>
+  </ffsocket>
+  <system>
+    <initialize nbeads='1'>
+      <file mode='xyz' units='angstrom'> init.xyz </file>
+      <cell mode='abc' units='angstrom'> [ 100.0, 100.0, 100.0 ] </cell>
+    </initialize>
+    <forces>
+      <force forcefield='driver'/>
+    </forces>
+    <ensemble>
+      <temperature units='kelvin'>xxxTxxx</temperature>
+    </ensemble>
+    <motion mode='replay'>
+      <file mode='xyz'> simulation.xc.xyz </file>
+    </motion>
+  </system>
+</simulation>

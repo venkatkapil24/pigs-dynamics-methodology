@@ -1,0 +1,21 @@
+LAMMPS data file generated get_lammps_data.py [VK]
+
+3 atoms
+2 atom types
+
+0.0 188.97261 xlo xhi
+0.0 188.97261 ylo yhi
+0.0 188.97261 zlo zhi
+0.0 0.0 0.0 xy xz yz
+
+Masses
+
+1 1.008
+2 15.999
+
+Atoms
+
+    1     2 9.65556  9.342  9.37153
+    2     1 8.09802  8.63828  9.82253
+    3     1 9.08162  10.7732  8.60188
+

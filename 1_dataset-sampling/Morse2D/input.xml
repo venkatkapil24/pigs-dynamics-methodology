@@ -1,0 +1,52 @@
+<simulation verbosity='high'>
+  <output prefix='simulation'>
+    <properties filename='out' stride='20'>  [ time{picosecond}, conserved, temperature{kelvin}, kinetic_md,  potential ] </properties>
+    <trajectory filename='pos' format='xyz' stride='20' bead='0'> positions </trajectory>
+    <trajectory filename='for' format='xyz' stride='20' bead='0'> forces </trajectory>
+    <trajectory filename='xc' format='xyz' stride='20'> x_centroid </trajectory>
+    <trajectory filename='fc' format='xyz' stride='20'> f_centroid </trajectory>
+    <checkpoint filename='restart' stride='20000' overwrite='true'/>
+  </output>
+  <total_steps> 2000000 </total_steps>
+  <total_time> 172000 </total_time>
+  <prng>
+    <seed>23658</seed>
+  </prng>
+  <ffsocket mode='unix' pbc='false' name='driver' matching='any'>
+    <address> 2DMorse_PIMD_efficient_sampling_xxxTxxxK </address>
+  </ffsocket>
+  <system_template>
+      <labels>   [ IDX, TEMP] </labels>
+      <instance> [ 0,  xxxTxxx] </instance>
+      <template>
+      <system>
+        <initialize nbeads='64'>
+          <file mode='xyz'> init.xyz </file>
+          <velocities mode='thermal' units='kelvin'> TEMP </velocities>
+          <masses mode='manual'> [1741.1] </masses>
+        </initialize>
+        <forces>
+          <force forcefield='driver'/>
+        </forces>
+        <ensemble>
+          <temperature units='kelvin'>TEMP</temperature>
+        </ensemble>
+        <motion mode='dynamics'>
+          <fixcom>False</fixcom>
+          <dynamics mode='nvt'>
+            <timestep units='femtosecond'> 0.5 </timestep>
+            <thermostat mode='pile_l'>
+              <tau units='femtosecond'> 100 </tau>
+            </thermostat>
+          </dynamics>
+        </motion>
+      </system>
+      </template>
+  </system_template>
+
+  <!--smotion mode="remd">
+     <remd>
+        <stride> 1 </stride>
+     </remd>
+  </smotion!-->   
+</simulation>
